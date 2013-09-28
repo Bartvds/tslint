@@ -17,6 +17,8 @@
 /// <reference path='jsonFormatter.ts'/>
 /// <reference path='proseFormatter.ts'/>
 
+declare var __dirname;
+
 module Lint.Formatters {
 
     var ALL_FORMATTERS: Formatter[] = [];
@@ -34,7 +36,7 @@ module Lint.Formatters {
         if (filteredFormatters.length > 0) {
             return filteredFormatters[0];
         } else {
-            return undefined;
+            return (require(name))();
         }
     }
 
