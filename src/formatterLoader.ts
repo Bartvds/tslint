@@ -22,8 +22,7 @@ module Lint {
     var _s = require("underscore.string");
 
     var moduleDirectory = path.dirname(module.filename);
-
-    var CORE_FORMATTERS_DIRECTORY = path.join("..", "build", "formatters");
+    var CORE_FORMATTERS_DIRECTORY = path.resolve(moduleDirectory, "..", "lib", "formatters");
 
     export function findFormatter(name: string, formattersDirectory?: string) {
         var camelizedName = _s.camelize(name + "Formatter");

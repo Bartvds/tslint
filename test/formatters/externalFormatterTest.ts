@@ -18,7 +18,7 @@
 
 describe("External Formatter", () => {
     var TEST_FILE = "formatters/externalFormatter.test.ts";
-    var TEST_MODULE = "../../test/files/formatters/simple";
+    var TEST_MODULE = "../test/files/formatters/simple";
     var syntaxTree, formatter;
 
     before(function() {

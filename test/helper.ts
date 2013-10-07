@@ -32,12 +32,12 @@ module Lint.Test {
     }
 
     export function getRule(ruleName: string) {
-        var rulesDirectory = path.join(global.process.cwd(), "build/rules");
+        var rulesDirectory = path.join(global.process.cwd(), "lib/rules");
         return Lint.findRule(ruleName, rulesDirectory);
     }
 
     export function getFormatter(formatterName: string) {
-        var formattersDirectory = path.join(global.process.cwd(), "build/formatters");
+        var formattersDirectory = path.join(global.process.cwd(), "lib/formatters");
         return Lint.findFormatter(formatterName, formattersDirectory);
     }
 

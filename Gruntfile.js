@@ -13,8 +13,8 @@ module.exports = function(grunt) {
         options: {
           reporter: 'spec'
         },
-        src: ['build/test/**/*.js']
-      },
+        src: ['build/*-tests.js']
+      }
     },
 
     tslint: {
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
           target: 'es5'
         },
         src: ['lib/tslint.d.ts', 'src/rules/*.ts'],
-        dest: ['build/rules/']
+        dest: ['lib/rules/']
       },
 
       core_formatters: {
@@ -70,7 +70,7 @@ module.exports = function(grunt) {
           target: 'es5'
         },
         src: ['lib/tslint.d.ts', 'src/formatters/*.ts'],
-        dest: ['build/formatters/']
+        dest: ['lib/formatters/']
       },
 
       test: {
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
           target: 'es5'
         },
         src: ['test/**/*.ts', '!test/files/**/*.ts'],
-        dest: 'build/test/tslint-tests.js'
+        dest: 'build/tslint-tests.js'
       }
     }
   });
