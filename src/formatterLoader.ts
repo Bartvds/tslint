@@ -42,7 +42,8 @@ module Lint {
             }
         }
 
-        return undefined;
+        // else try to resolve as module
+        return loadFormatterModule(name);
     }
 
     function loadFormatter(...paths: string[]) {
@@ -55,5 +56,16 @@ module Lint {
         }
 
         return undefined;
+    }
+
+    function loadFormatterModule(name: string) {
+        var src;
+        try {
+            src = require.resolve(name);
+        }
+        catch (e) {
+            return undefined;
+        }
+        return require(src).Formatter;
     }
 }
